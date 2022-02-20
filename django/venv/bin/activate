@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/andriimazur/PycharmProjects/learning_spark/quiz_app/venv"
+VIRTUAL_ENV="/Users/andriimazur/Documents/04_Programming/01_Projects/12_quiz_app/django/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

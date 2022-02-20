@@ -1,4 +1,4 @@
-#!/Users/andriimazur/PycharmProjects/learning_spark/quiz_app/venv/bin/python3.9
+#!/Users/andriimazur/Documents/04_Programming/01_Projects/12_quiz_app/django/venv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys
