@@ -8,6 +8,7 @@ class QuizSerializer(serializers.ModelSerializer):
         model = Quizzes
         fields = [
             'title',
+            'questions_count'
         ]
 
 
@@ -29,7 +30,7 @@ class RandomQuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = [
-            'title', 'answer',
+            'title', 'answer', 'explanation'
         ]
 
 

@@ -5,13 +5,28 @@ from .serializers import QuizSerializer, RandomQuestionSerializer, QuestionSeria
 from rest_framework.views import APIView
 
 
-class Quiz(generics.ListAPIView):
+class StartQuiz(APIView):
+    def get(self, request, **kwargs):
+        quiz = Quizzes.objects.filter(category__name=kwargs['title'])
+        serializer = QuizSerializer(quiz, many=True)
+        return Response(serializer.data)
 
+
+class Quiz(generics.ListAPIView):
     serializer_class = QuizSerializer
     queryset = Quizzes.objects.all()
 
+    def list(self, request, *arg, **kwargs):
+        queryset = Quizzes.objects.all()
+        response = []
+        for idx, quiz in enumerate(queryset):
+            response.append({
+                'title': quiz.title,
+                'questions_count': len(quiz.question.all())
+            })
+        return Response(response)
 
-class RandomQuestion(APIView):
+class RandomQuestionTopic(APIView):
 
     def get(self, request, format=None, **kwargs):
         question = Question.objects.filter(quiz__title=kwargs['topic']).order_by('?')[:1]

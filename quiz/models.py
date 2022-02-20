@@ -54,6 +54,7 @@ class Question(Updated):
         Quizzes, related_name='question', on_delete=models.DO_NOTHING)
     technique = models.IntegerField(choices=TYPE, default=0, verbose_name=("Type of Question"))
     title = models.CharField(max_length=255, verbose_name=_("Title"))
+    explanation = models.CharField(max_length=1024, default="")
     difficulty = models.IntegerField(
         choices=SCALE, default=0, verbose_name=_("Difficulty"))
     date_created = models.DateTimeField(
