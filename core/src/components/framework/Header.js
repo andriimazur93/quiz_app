@@ -1,5 +1,8 @@
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import {BrowserRouter, withRouter} from 'react-router-dom'
+import props from 'prop-types';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,6 +26,7 @@ export default function Header() {
           >
             Quizzes
           </Typography>
+            {window.location.pathname.startsWith('/r') ? <Button href="/" variant="outlined">Go Back</Button> : ""}
         </Toolbar>
       </AppBar>
     </div>
