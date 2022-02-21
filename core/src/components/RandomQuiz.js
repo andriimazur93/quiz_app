@@ -10,6 +10,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from "@material-ui/core/Button";
+import Box from '@material-ui/core/Box';
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
@@ -144,9 +145,10 @@ export const RandomQuiz = () => {
         <div className={classes.paper}>
           {dataState.data.map(({ title, answer, explanation}, i) => (
             <div key={i}>
-              <Typography component="h1" variant="h5">
+              <Typography component="h1" variant="h5" >
                 {title}
               </Typography>
+              <Box m="2rem" />
               {answer.map(({ answer_text, id }) => (
                 <RadioGroup>
                   <FormControlLabel
