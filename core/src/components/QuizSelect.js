@@ -113,7 +113,7 @@ export const QuizSelect = () => {
                     fullWidth
                     variant="outlined"
                     color="primary"
-                    href="http://localhost:3000/r/django"
+                    href={`r/${q.title}`}
                   >
                     Start Quiz
                   </Button>

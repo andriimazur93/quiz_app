@@ -8,7 +8,8 @@ class QuizSerializer(serializers.ModelSerializer):
         model = Quizzes
         fields = [
             'title',
-            'questions_count'
+            'questions_count',
+            'slug'
         ]
 
 

@@ -22,6 +22,7 @@ class Quiz(generics.ListAPIView):
         for idx, quiz in enumerate(queryset):
             response.append({
                 'title': quiz.title,
+                'slug': quiz.slug,
                 'questions_count': len(quiz.question.all())
             })
         return Response(response)

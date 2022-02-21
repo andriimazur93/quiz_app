@@ -20,6 +20,7 @@ class Quizzes(models.Model):
 
     category = models.ForeignKey(
         Category, default=1, on_delete=models.DO_NOTHING)
+    slug = models.CharField(max_length=255, default="")
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

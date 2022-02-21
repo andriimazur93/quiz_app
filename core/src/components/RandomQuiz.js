@@ -94,7 +94,9 @@ export const RandomQuiz = () => {
   };
 
   function refreshPage() {
-    window.location.reload(false);
+//    window.location.reload(false);
+    window.location.replace(window.location.href.split('#')[0]);
+
   }
 
   function Result(explanation) {
@@ -138,7 +140,7 @@ export const RandomQuiz = () => {
   return (
     <React.Fragment>
       <Header />
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="md">
         <div className={classes.paper}>
           {dataState.data.map(({ title, answer, explanation}, i) => (
             <div key={i}>
